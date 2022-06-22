@@ -1,0 +1,31 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-datasource": "^3.3.1",
+    "apollo-datasource-rest": "^3.6.0",
+    "apollo-server": "^3.8.2",
+    "dotenv": "^16.0.1",
+    "graphql": "^15.0.0",
+    "isemail": "^3.2.0",
+    "nodemon": "^2.0.16",
+    "sequelize": "^6.20.1",
+    "sqlite3": "^5.0.8"
+  },
+  "devDependencies": {
+    "apollo": "^2.34.0",
+    "apollo-link": "^1.2.14",
+    "apollo-link-http": "^1.5.17",
+    "jest": "^28.1.1",
+    "nock": "^13.2.6",
+    "node-fetch": "^3.2.6"
+  }
+}
