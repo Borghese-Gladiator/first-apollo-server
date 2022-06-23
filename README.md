@@ -1,10 +1,10 @@
 # First Apollo GraphQL
 Followed these articles to implement a server and client on Heroku
 - Legacy tutorial no longer present - [https://www.apollographql.com/docs/tutorial/introduction.html](https://www.apollographql.com/docs/tutorial/introduction.html)
-- [https://www.apollographql.com/docs/apollo-server/getting-started](https://www.apollographql.com/docs/apollo-server/getting-started)
-- [https://www.apollographql.com/tutorials/fullstack-quickstart/introduction](https://www.apollographql.com/tutorials/fullstack-quickstart/introduction)
+- Apollo Server - [https://www.apollographql.com/docs/apollo-server/getting-started](https://www.apollographql.com/docs/apollo-server/getting-started)
+- Apollo Fullstack - [https://www.apollographql.com/tutorials/fullstack-quickstart/introduction](https://www.apollographql.com/tutorials/fullstack-quickstart/introduction)
 
-## Notes
+## General Notes
 Apollo is a platform for building a unified supsergraph using GraphQL. Apollo is meant to handle Authentication, Pagination, State Management
 - Apollo Client - state management library to manage both local and remote data with GraphQL (fetch, cache, modify application data)
 - Apollo Server - open source GraphQL server compatible with any GraphQL client like Apollo Client and has a self-documenting GraphQL API
@@ -23,6 +23,7 @@ GraphQL Server Parts
 - Data set is the actual data in the form of the schema
 - Resolver - tell Apollo Server how to fetch data associated with a particular type
 - GraphQL supported server like an Instance of ApolloServer
+
 
 Schema
 - `!` means non-nullable
@@ -136,8 +137,22 @@ Custom Scalars like dates - [https://www.apollographql.com/docs/apollo-server/sc
 
 
 ## Apollo Client
+- @apollo/client: This single package contains virtually everything you need to set up Apollo Client. It includes the in-memory cache, local state management, error handling, and a React-based view layer.
+- graphql: This package provides logic for parsing GraphQL queries.
 
-#### Archive
+
+#### Notes
+- `npm install @apollo/client graphql --template typescript`
+- initialize ApolloClient inside index.tsx
+- Connect your client to React by adding ApolloProvider around App
+- Fetch data with useQuery by creating ExchangeRates component
+- Add types to ExchangeRates component
+
+
+## Apollo Fullstack
+
+
+## Archive
 Legacy Apollo Tutorial content
 - Initialization based on [https://github.com/apollographql/fullstack-tutorial](https://github.com/apollographql/fullstack-tutorial)
   - add .gitignore
