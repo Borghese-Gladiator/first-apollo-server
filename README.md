@@ -2,7 +2,8 @@
 Followed these articles to implement a server and client on Heroku
 - Legacy tutorial no longer present - [https://www.apollographql.com/docs/tutorial/introduction.html](https://www.apollographql.com/docs/tutorial/introduction.html)
 - Apollo Server - [https://www.apollographql.com/docs/apollo-server/getting-started](https://www.apollographql.com/docs/apollo-server/getting-started)
-- Apollo Fullstack - [https://www.apollographql.com/tutorials/fullstack-quickstart/introduction](https://www.apollographql.com/tutorials/fullstack-quickstart/introduction)
+- Apollo Client - [https://www.apollographql.com/docs/react/](https://www.apollographql.com/docs/react/)
+=> next steps - go through full stack tutorial [https://www.apollographql.com/tutorials/fullstack-quickstart/introduction](https://www.apollographql.com/tutorials/fullstack-quickstart/introduction)
 
 ## General Notes
 Apollo is a platform for building a unified supsergraph using GraphQL. Apollo is meant to handle Authentication, Pagination, State Management
@@ -141,6 +142,33 @@ Custom Scalars like dates - [https://www.apollographql.com/docs/apollo-server/sc
 - graphql: This package provides logic for parsing GraphQL queries.
 
 
+Queries - useQuery hook
+- write GET using gqp
+  ```
+  const GET_DOG_PHOTO = gql`
+    query Dog($breed: String!) {
+      dog(breed: $breed) {
+        id
+        displayImage
+      }
+    }
+  `;
+  ```
+- caching
+  ```
+  const { loading, error, data } = useQuery(GET_DOG_PHOTO, {
+    variables: { breed },
+  });
+  ```
+- Updating caching query results
+  - Polling - pass pollInterval configuration option to the useQuery hook
+  - Refetching - refresh query results in response to a particular user action
+
+
+Mutations - useMutation hook
+- write POST using gql
+
+
 #### Notes
 - `npm install @apollo/client graphql --template typescript`
 - initialize ApolloClient inside index.tsx
@@ -148,8 +176,12 @@ Custom Scalars like dates - [https://www.apollographql.com/docs/apollo-server/sc
 - Fetch data with useQuery by creating ExchangeRates component
 - Add types to ExchangeRates component
 
+## Apollo Custom Fullstack
+I wrote this custom to connect the two articles from Apollo Client and Apollo Server
 
-## Apollo Fullstack
+
+#### Notes
+- 
 
 
 ## Archive
