@@ -57,7 +57,7 @@ const BooksList: React.FunctionComponent = () => {
 		<ul>
 			{data.books.map(({ title, author }: Book, idx: number) => {
 				return (
-					<li>
+					<li key={`books-${idx}`}>
 						<span>"{title}" - {author}</span>
 					</li>
 				)
