@@ -181,10 +181,14 @@ I wrote this custom to connect the two articles from Apollo Client and Apollo Se
 
 
 #### Notes
-- 
+- Updated Apollo Client URL in index.tsx - (natively, it seems to just connect to one server endpoint at a time)
 
+## Next Steps
+- Apollo Client with multiple Apollo Server endpoints
+	- query third party site
+	- query my Heroku site
 
-## Archive
+#### Archive
 Legacy Apollo Tutorial content
 - Initialization based on [https://github.com/apollographql/fullstack-tutorial](https://github.com/apollographql/fullstack-tutorial)
   - add .gitignore
