@@ -10,7 +10,7 @@ import {
 } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: 'https://48p1r2roz4.sse.codesandbox.io',
+  uri: 'https://apollo-heroku-deployment0791.herokuapp.com/',
   cache: new InMemoryCache()
 });
 

@@ -3,6 +3,7 @@ import {
   gql
 } from "@apollo/client";
 
+/*
 const EXCHANGE_RATES = gql`
   query GetExchangeRates {
     rates(currency: "USD") {
@@ -16,7 +17,6 @@ type Rate = {
   currency: number,
   rate: number
 }
-
 const ExchangeRates: React.FunctionComponent = () => {
   const { loading, error, data } = useQuery(EXCHANGE_RATES);
 
@@ -31,12 +31,46 @@ const ExchangeRates: React.FunctionComponent = () => {
     </div>
   ));
 }
+*/
+
+const GET_BOOKS = gql`
+  query GetBooks {
+		books {
+			title,
+			author
+		}
+	}
+`;
+
+type Book = {
+	title: string,
+	author: string
+}
+
+const BooksList: React.FunctionComponent = () => {
+  const { loading, error, data } = useQuery(GET_BOOKS);
+	console.log(data);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error :</p>;
+	return (
+		<ul>
+			{data.books.map(({ title, author }: Book, idx: number) => {
+				return (
+					<li>
+						<span>"{title}" - {author}</span>
+					</li>
+				)
+			})}
+		</ul>
+	)
+}
 
 const App: React.FunctionComponent = () => {
   return (
     <div>
-      <h2>My first Apollo app 🚀</h2>
-      <ExchangeRates />
+			<h2>Books list 🚀</h2>
+			<BooksList />
     </div>
   );
 }
